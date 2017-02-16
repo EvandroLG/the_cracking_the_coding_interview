@@ -5,23 +5,23 @@ FOLLOW UP
 Write the test cases for this method.
 */
 
-// Complexity O(N)
+// Complexity O(N2)
 var removeDuplicateCharacters = function(str) {
   if (typeof(str) != 'string') { return null; }
   if (str.length == 1) { return str; }
 
-  var characters = {};
-  var output = [];
+	let output = '';
+	for (let i=0, size=str.length; i < size; i++) {
+		if (!output.includes(str[i])) {
+			output = output + str[i];
+		}
+	}
 
-  for (var i=0, size=str.length; i < size; i++) {
-    if (str[i] in characters == false) {
-      output.push(str[i]);
-      characters[str[i]] = true;
-    }
-  }
-
-  return output.join('');
+	return output;
 };
 
 var assert = require('assert');
-assert.equal(removeDuplicateCharacters('aabc'), 'abc');
+assert.equal(null, removeDuplicateCharacters(1));
+assert.equal('a', removeDuplicateCharacters('a'));
+assert.equal('abc', removeDuplicateCharacters('aabc'));
+assert.equal('abc', removeDuplicateCharacters('aaabcacb'));

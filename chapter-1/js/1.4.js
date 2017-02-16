@@ -39,7 +39,6 @@ var areAnagrams = function(firstStr, secondStr) {
   var secondCounter = counterCharacters(secondStr);
 
   return equalHashes(firstCounter, secondCounter);
-
 };
 
 var assert = require('assert');

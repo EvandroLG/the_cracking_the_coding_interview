@@ -5,21 +5,18 @@ include Test::Unit::Assertions
 # (C-String means that “abcd” is represented as  ve characters, including the null character.)
 
 # Complexity = O(N)
-def unique_characters(str)
-  first_character = str[0]
-  index = 1
-  size = str.size
+def reverse_c_style(str)
+  if str.class != String then return end
 
-  while index < size do
-    if str[index] != first_character
-      return false
-    end
+  output = []
+  i = str.size - 3
 
-    index = index + 1
+  while i >= 0
+    output.push str[i] 
+    i = i - 1
   end
 
-  true
+  output.join('').concat('\0')
 end
 
-assert unique_characters('aaaaa')
-assert !unique_characters('beta')
+assert_equal 'fedcba\0', reverse_c_style('abcdef\0')

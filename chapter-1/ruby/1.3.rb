@@ -7,19 +7,18 @@ include Test::Unit::Assertions
 #Write the test cases for this method.
 
 # Complexity O(N^2)
-
 def remove_duplicates(str)
   if str.empty? then return end
   if str.size < 2 then return end
 
-	output = ''
+  output = ''
   str.each_char do |v|
-		unless output.include? v
-			output = output + v
-		end
+    unless output.include? v
+      output = output + v
+    end
   end
 
-	puts output
+  puts output
 end
 
 assert_equal 'abc', remove_duplicates('aabcac')

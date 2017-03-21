@@ -8,7 +8,7 @@ var isRotation = function(s1, s2) {
   if (typeof(s1) != 'string' || typeof(s2) != 'string') {
     return false;
   }
-  
+
   if (s1.length != s2.length) {
     return false;
   }

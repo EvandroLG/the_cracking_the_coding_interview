@@ -6,7 +6,7 @@ include Test::Unit::Assertions
 # Complexity O(N)
 def replace_all_spaces(str)
   if str.class != String then return end
-  
+
   output = []
   str.split('').each do |v|
     if v == ' '

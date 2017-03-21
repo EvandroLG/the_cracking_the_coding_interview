@@ -10,14 +10,14 @@ var removeDuplicateCharacters = function(str) {
   if (typeof(str) != 'string') { return null; }
   if (str.length == 1) { return str; }
 
-	let output = '';
-	for (let i=0, size=str.length; i < size; i++) {
-		if (!output.includes(str[i])) {
-			output = output + str[i];
-		}
-	}
+  let output = '';
+  for (let i=0, size=str.length; i < size; i++) {
+    if (!output.includes(str[i])) {
+      output = output + str[i];
+    }
+  }
 
-	return output;
+  return output;
 };
 
 var assert = require('assert');

@@ -1,3 +1,6 @@
+# Implement an algorithm to find the nth to last element of a singly linked list.
+
+# Complexity O(N)
 def remove_duplacate_nodes node
   unless node[:node_next]
     return
